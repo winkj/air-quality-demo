@@ -8,6 +8,13 @@ The demo is prepared for the ```CK8CKIT-062-WIFI-BT``` reference design, but it 
 
 This tutorial assumes that the user is familiar with Cypress' WICED Studio, and Thingsboard. For questions on how to use these tools, please check their respective documentation.
 
+The drivers for this demo are implemented using Sensirion's standard embedded drivers:
+- SPS30: https://github.com/Sensirion/embedded-sps
+- SHTC1: https://github.com/Sensirion/embedded-sht
+- SGP30: https://github.com/Sensirion/embedded-sgp
+
+The WICED port is based on the wiced-ess implementation:
+- https://github.com/winkj/wiced-ess
 
 ## Preparation
 
