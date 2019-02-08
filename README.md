@@ -123,3 +123,5 @@ Simply change the ```.i2c_port``` to match the I2C port you are attaching the se
     // -- device probing
     while (ess_init(&device_config) != WICED_SUCCESS) {
 ```
+
+You can find a list of premade configurations for WICED devices in the [wiced-ess library](https://github.com/winkj/wiced-ess/blob/master/sensirion_ess/ess_device_configs.c), which includes a default configuration called ```ESS_DEVICE_CONFIG_DEFAULT```.
