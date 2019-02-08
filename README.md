@@ -26,7 +26,29 @@ This documentation is separate into the following chapters:
 1. Device setup
 1. Configuring for a particular WICED platform [TBD] 
 
-## Hardware setup [TBD]
+## Hardware setup
+
+### Components
+
+The hardware setup consists of the following components:
+
+- Hardware platform (reference design / development kit) supported by Cypress WICED SDK
+- Sensirion Environmental Sensor Shield (ESS) featuring the SHTC1 and SGP30 sensors
+- Sensirion SPS30 particulate matter sensor
+
+The ESS requires a hardware platform which has Arduino-compatible expansion headers. Subsequenty, we will assume that the platform chosen has such expansion headers.
+
+**Note:** Of course, the software will also work for other sensor boards featuring the SHTC1 and SGP30 sensor components, as long as they are correctly wired.
+
+### Interface cable for the SPS30 [TBD]
+
+### Connecting the sensors
+
+The ESS has a connector on the back with power supply lines (VCC, GND) as well as I2C lines (SCL, SDA). This allows to connect another sensor easily. In this case however, the SPS30 requires an exact 5V supply voltage (+/-10%), which the VCC pin on the back won't deliver. So in order to supply this, you can connect the VCC pin of the SPS30 cable to any available 5V pin on your hardware platform.
+
+Alternatively, you can solder a jumper wire to the 5V pin of your ESS board, and use super glue to fix it to the back of the ESS board. This allows to keep the connectings hidden and the setup neat:
+
+TBD: add photos
 
 ## Software downloads
 
