@@ -4,7 +4,7 @@
 
 This is a demo project showing the integration of Sensirion's environmental sensors with Cypress WICED SDK devices, using http://thingsboard.io as an online dashboard. Sensors used are the SHTC1 temperature humidity sensor and SGP30 air quality sensor as well as the SPS30 particulate matter sensor.
 
-The demo is prepared for the ```CK8CKIT-062-WIFI-BT``` reference design, but it should work with all WICED SDK devices with minor modifications.
+The demo is prepared to work on any WICED SDK device, requiring only adjustments to the inital configuration.
 
 This tutorial assumes that the user is familiar with Cypress' WICED Studio, and Thingsboard. For questions on how to use these tools, please check their respective documentation.
 
@@ -19,11 +19,12 @@ The WICED port is based on the wiced-ess implementation:
 
 ## Table of contents
 
-This documentation is separate into four different chapters:
+This documentation is separate into the following chapters:
 1. Hardware setup [TBD]
 1. Software downloads
 1. Dashboard setup
 1. Device setup
+1. Configuring for a particular WICED platform [TBD] 
 
 ## Hardware setup [TBD]
 
@@ -37,13 +38,13 @@ This demo is using http://thingsboard.io for visualization. To setup this demo, 
 
 1. first create an account on their demo server https://demo.thingsboard.io/login
 1. Go to the ```Devices``` tab
-1. create a new device; you can choose any name, but we're going to use ```CY8CKIT``` in this documentation; make sure you replace any occurances of this with the device name you chose
+1. create a new device; you can choose any name, but we're going to use ```WICED_INPUT``` in this documentation; make sure you replace any occurances of this with the device name you chose
 1. Make the device public by pressing the "share" icon
 1. Go to the ```Dashboards``` tab
 1. import the dashboard from the downloadded ZIP, located in ```dashboard/air_quality_demo.json```
 1. Open the newly created dashboard (It's going to be called "Air Quality Demo"
 1. Press the edit button
-1. Select the entity aliases button, and make sure you have an alias named ```ess-input```, Filter Type ```Single Device```, Type ```Device```, Device ```CY8KIT```
+1. Select the entity aliases button, and make sure you have an alias named ```ess-input```, Filter Type ```Single Device```, Type ```Device```, Device ```WICED_INPUT```
 1. Go back to the ```Dashboards``` tab
 1. Make the Dashboard public by pressing the "share" icon, and store the URL you're getting from this dialog
 
@@ -64,9 +65,9 @@ For the device setup, follow the following steps:
 1. In the ```wiced directory```, select the ```air_quality_demo``` folder, and press Ctrl-c to copy it
 1. Go back to WICED-Studio and open 43xxx_Wi-Fi\apps\demo
 1. Press Ctrl-v
-1. Create a new Make target called ```demo.air_quality_demo-CY8CKIT_062 download run```
+1. Create a new Make target called ```demo.air_quality_demo-<WICED PLATFORM NAME> download run```
 
-For the last step, if you're using another WICED platform, replace ```CY8CKIT_062``` with the name of your platform
+For the last step, put in the name of the WICED platform you're using.
 
 ### Step 2: Adjust the files
 1. go to the ```air_quality_demo``` folder, and open ```air_quality_demo_secrets.h```
@@ -102,3 +103,5 @@ If you see this output, the setup worked as expected. You can then enable the ne
 1. You should see a steady stream of data coming in
 1. Go to the dashboards tab, and select your new data.
 1. If everything works as expected, you should see the gauges and charts animated with the most recent data
+
+## Configuring for a particular WICED platform [TBD] 
