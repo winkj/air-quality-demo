@@ -22,11 +22,11 @@ The WICED port is based on the wiced-ess implementation:
 ## Table of contents
 
 This documentation is separate into the following chapters:
-1. Hardware setup
-1. Software downloads
-1. Dashboard setup
-1. Device setup
-1. Configuring for a particular WICED platform
+1. [Hardware setup](#hardware-setup)
+1. [Software downloads](#software-downloads)
+1. [Dashboard setup](#dashboard-setup)
+1. [Device setup](#device-setup)
+1. [Configuring for a particular WICED platform](#configuring-for-a-particular-wiced-platform)
 
 ## Hardware setup
 
