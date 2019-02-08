@@ -62,11 +62,17 @@ In addition, to connect to the reference design, you can use any jumper cables y
 - (Jumper wires)[https://www.amazon.com/SIM-NAT-Breadboard-Arduino-Raspberry/dp/B06XRV92ZB/]
 
 Finally, to assemble the cable, procede as follows:
-1. Connect the five pre-crimped wires to the connector; ensure the cables are properly aligned
-1. Connect Wire 4 ```SEL``` and 5 ```GND``` together
-1. Cut off a short piece of the jumper wires with the connector you need, strip a few mm of the other end of the cable
-1. solder the jumper wires to the pre-crimped wires wires; for Wire 4 and 5, connect only one connector
-1. Use heat shrink wrap and a heat gun to protect the solder joints
+- Connect the five pre-crimped wires to the connector; ensure the cables are properly aligned
+- Connect Wire 4 ```SEL``` and 5 ```GND``` together
+
+![Wire 4 and 5 connected](doc/sps30-cable_2.jpg)
+
+- Cut off a short piece of the jumper wires with the connector you need, strip a few mm of the other end of the cable
+- solder the jumper wires to the pre-crimped wires wires; for Wire 4 and 5, connect only one connector
+
+![jumper wires soldered together](doc/sps30-cable_3.jpg)
+
+- Use heat shrink wrap and a heat gun to protect the solder joints
 
 The pictures in this documention use a red jumper wire for VCC, green for SDA, yellow for SCL, and black for GND. You can choose any colors you like, of course. The resulting cable should look like this:
 
