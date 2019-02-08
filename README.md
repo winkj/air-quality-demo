@@ -22,11 +22,11 @@ The WICED port is based on the wiced-ess implementation:
 ## Table of contents
 
 This documentation is separate into the following chapters:
-1. Hardware setup [TBD]
+1. Hardware setup
 1. Software downloads
 1. Dashboard setup
 1. Device setup
-1. Configuring for a particular WICED platform [TBD] 
+1. Configuring for a particular WICED platform
 
 ## Hardware setup
 
@@ -52,9 +52,26 @@ The interface of the SPS30 is described in its datasheet (chapter "Hardware Inte
 | 2    | SDA               |
 | 3    | SCL               |
 | 4    | SEL (GND for I2C) |
-| 4    | GND               |
+| 5    | GND               |
 
-TBD continue here
+To make the cable, it's easier to buy pre-crimped cables. 
+- 1x [ZHR-5 connector](https://www.digikey.com/product-detail/en/jst-sales-america-inc/ZHR-5/455-1201-ND/608642)
+- 5x [Pre-crimped 6" wires](https://www.digikey.com/product-detail/en/jst-sales-america-inc/ASZHSZH28K152/455-3079-ND/6009455)
+
+In addition, to connect to the reference design, you can use any jumper cables you have available. Choose either a male of female connector based on your reference design. To connect to the ESS, female connectors are required. If you don't have cables available, the following is an example of cables that would work:
+- (Jumper wires)[https://www.amazon.com/SIM-NAT-Breadboard-Arduino-Raspberry/dp/B06XRV92ZB/]
+
+Finally, to assemble the cable, procede as follows:
+1. Connect the five pre-crimped wires to the connector; ensure the cables are properly aligned
+1. Connect Wire 4 ```SEL``` and 5 ```GND``` together
+1. Cut off a short piece of the jumper wires with the connector you need, strip a few mm of the other end of the cable
+1. solder the jumper wires to the pre-crimped wires wires; for Wire 4 and 5, connect only one connector
+1. Use heat shrink wrap and a heat gun to protect the solder joints
+
+The pictures in this documention use a red jumper wire for VCC, green for SDA, yellow for SCL, and black for GND. You can choose any colors you like, of course. The resulting cable should look like this:
+
+![SPS30 cable](doc/sps30-cable.png)
+
 
 ### Connecting the sensors
 
