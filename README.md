@@ -79,16 +79,18 @@ The pictures in this documention use a red jumper wire for VCC, green for SDA, y
 ![SPS30 cable](doc/sps30-cable.png)
 
 
-### Connecting the sensors
+### Connecting the SPS30 to the ESS board
 
 The ESS has a connector on the back with power supply lines (VCC, GND) as well as I2C lines (SCL, SDA). This allows to connect another sensor easily. In this case however, the SPS30 requires an exact 5V supply voltage (+/-10%), which the VCC pin on the back won't deliver. So in order to supply this, you can connect the VCC pin of the SPS30 cable to any available 5V pin on your hardware platform.
 
 Alternatively, you can solder a jumper wire to the 5V pin of your ESS board, and use super glue to fix it to the back of the ESS board. This allows to keep the connectings hidden and the setup neat:
 
 **Front:**
+
 ![Front view](doc/ess-5v_1.jpg)
 
 **Back:**
+
 ![Back view](doc/ess-5v_2.jpg)
 
 ## Software downloads
