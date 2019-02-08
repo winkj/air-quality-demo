@@ -16,6 +16,8 @@ The drivers for this demo are implemented using Sensirion's standard embedded dr
 The WICED port is based on the wiced-ess implementation:
 - https://github.com/winkj/wiced-ess
 
+![Dashboard preview](doc/dashboard.jpg)
+
 
 ## Table of contents
 
@@ -60,7 +62,11 @@ The ESS has a connector on the back with power supply lines (VCC, GND) as well a
 
 Alternatively, you can solder a jumper wire to the 5V pin of your ESS board, and use super glue to fix it to the back of the ESS board. This allows to keep the connectings hidden and the setup neat:
 
-TBD: add photos
+**Front:**
+![Front view](doc/ess-5v_1.jpg)
+
+**Back:**
+![Back view](doc/ess-5v_2.jpg)
 
 ## Software downloads
 
@@ -137,6 +143,10 @@ If you see this output, the setup worked as expected. You can then enable the ne
 1. You should see a steady stream of data coming in
 1. Go to the dashboards tab, and select your new data.
 1. If everything works as expected, you should see the gauges and charts animated with the most recent data
+
+The resulting dashboard should look like this:
+
+![Dashboard preview](doc/dashboard.jpg)
 
 ## Configuring for a particular WICED platform
 
