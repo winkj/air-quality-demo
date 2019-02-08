@@ -104,7 +104,7 @@ This demo is using http://thingsboard.io for visualization. To setup this demo, 
 1. create a new device; you can choose any name, but we're going to use ```WICED_INPUT``` in this documentation; make sure you replace any occurances of this with the device name you chose
 1. Make the device public by pressing the "share" icon
 1. Go to the ```Dashboards``` tab
-1. import the dashboard from the downloadded ZIP, located in ```dashboard/air_quality_demo.json```
+1. import the dashboard from the downloadded ZIP, located in [dashboard/air_quality_demo.json](dashboard/air_quality_demo.json)
 1. Open the newly created dashboard (It's going to be called "Air Quality Demo"
 1. Press the edit button
 1. Select the entity aliases button, and make sure you have an alias named ```ess-input```, Filter Type ```Single Device```, Type ```Device```, Device ```WICED_INPUT```
