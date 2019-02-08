@@ -104,4 +104,22 @@ If you see this output, the setup worked as expected. You can then enable the ne
 1. Go to the dashboards tab, and select your new data.
 1. If everything works as expected, you should see the gauges and charts animated with the most recent data
 
-## Configuring for a particular WICED platform [TBD] 
+## Configuring for a particular WICED platform
+
+This demo should be compatible with most WICED hardware platforms, however the code may have to be adjusted to match the hardware configuration. 
+
+To do that, open the file ```air_quality_demo.c```, and locate the call to the ```ess_init()``` function. This function takes an argument of type ```ess_device_config_t```, which is a struct defined in the ```sensirion_ess``` library. More information on that library can be found [here](https://github.com/winkj/wiced-ess).
+
+To build your own configuration, add the following code:
+```c
+const ess_device_config_t device_config = {
+    .i2c_port              = WICED_I2C_1,
+    .needs_init_workaround = 0,
+    .leds_supported        = 0,
+};
+```
+Simply change the ```.i2c_port``` to match the I2C port you are attaching the sensors to (e.g. ```WICED_I2C_1, WICED_I2C_2, WICED_I2C_3, WICED_I2C_4```). Once this is done, change the line with ```ess_init()``` to use this particular configuration:
+```c
+    // -- device probing
+    while (ess_init(&device_config) != WICED_SUCCESS) {
+```
