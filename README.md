@@ -40,7 +40,19 @@ The ESS requires a hardware platform which has Arduino-compatible expansion head
 
 **Note:** Of course, the software will also work for other sensor boards featuring the SHTC1 and SGP30 sensor components, as long as they are correctly wired.
 
-### Interface cable for the SPS30 [TBD]
+### Interface cable for the SPS30
+
+The interface of the SPS30 is described in its datasheet (chapter "Hardware Interface Specifications"). The connector is a ZHR-5 from JST Sales America Inc. The pin out is defined as follows when using the sensor in I2C mode:
+
+| Pin  | Function          |
+| ---- | ----------------- |
+| 1    | VDD               |
+| 2    | SDA               |
+| 3    | SCL               |
+| 4    | SEL (GND for I2C) |
+| 4    | GND               |
+
+TBD continue here
 
 ### Connecting the sensors
 
