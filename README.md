@@ -16,9 +16,20 @@ The drivers for this demo are implemented using Sensirion's standard embedded dr
 The WICED port is based on the wiced-ess implementation:
 - https://github.com/winkj/wiced-ess
 
-## Preparation
 
-Please download a current release ZIP file from https://github.com/winkj/aqdemo/releases
+## Table of contents
+
+This documentation is separate into four different chapters:
+1. Hardware setup [TBD]
+1. Software downloads
+1. Dashboard setup
+1. Device setup
+
+## Hardware setup [TBD]
+
+## Software downloads
+
+Please download a current release ZIP file from https://github.com/winkj/aqdemo/releases. It will be use in subsequent sections
 
 ## Dashboard setup
 
@@ -81,7 +92,7 @@ measured values:
 	4.35 nc10.0
 	0.74 typical particle size
 ```
-If you see this output, the setup worked as expected. YOu can then enable the networking (see next step)
+If you see this output, the setup worked as expected. You can then enable the networking (see next step). Please note that the measured values - the numbers shown above - are a representation of the live environment, so they will most likely be different in your setup.
 
 ### Step 4: Test with Network upload
 1. To test with the networking enabled, open ```air_quality_demo.c``` in your ```air_quality_demo``` directory, and remove the comment from ```#define ENABLE_DATA_UPLOAD```
