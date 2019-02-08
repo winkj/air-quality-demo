@@ -92,10 +92,10 @@ For the device setup, follow the following steps:
 For the last step, put in the name of the WICED platform you're using.
 
 ### Step 2: Adjust the files
-1. go to the ```air_quality_demo``` folder, and open [air_quality_secrets.h](wiced/air_quality_demo/air_quality_secrets.h)
+1. go to the ```air_quality_demo``` folder, and open [air_quality_demo_secrets.h](wiced/air_quality_demo/air_quality_demo_secrets.h)
 1. Change the WiFi information to match your wireless network
 1. Then, go to https://demo.thingsboard.io/devices, click on the device you created before, and select "Copy Access Token"
-1. Paste this value in [air_quality_secrets.h](wiced/air_quality_demo/air_quality_secrets.h) for the ```THINGBOARD_DEVICE_TOKEN``` #define
+1. Paste this value in [air_quality_demo_secrets.h](wiced/air_quality_demo/air_quality_demo_secrets.h) for the ```THINGBOARD_DEVICE_TOKEN``` #define
 
 ### Step 3: Test without network
 1. To test without the networking setup, open [air_quality_demo.c](wiced/air_quality_demo/air_quality_demo.c) in your ```air_quality_demo``` directory, and comment out the ```#define ENABLE_DATA_UPLOAD```
