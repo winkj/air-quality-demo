@@ -92,13 +92,13 @@ For the device setup, follow the following steps:
 For the last step, put in the name of the WICED platform you're using.
 
 ### Step 2: Adjust the files
-1. go to the ```air_quality_demo``` folder, and open ```air_quality_demo_secrets.h```
+1. go to the ```air_quality_demo``` folder, and open [air_quality_secrets.h](wiced/air_quality_demo/air_quality_secrets.h)
 1. Change the WiFi information to match your wireless network
 1. Then, go to https://demo.thingsboard.io/devices, click on the device you created before, and select "Copy Access Token"
-1. Paste this in ```air_quality_demo_secrets.h``` for the ```THINGBOARD_DEVICE_TOKEN``` #define
+1. Paste this value in [air_quality_secrets.h](wiced/air_quality_demo/air_quality_secrets.h) for the ```THINGBOARD_DEVICE_TOKEN``` #define
 
 ### Step 3: Test without network
-1. To test without the networking setup, open ```air_quality_demo.c``` in your ```air_quality_demo``` directory, and comment out the ```#define ENABLE_DATA_UPLOAD```
+1. To test without the networking setup, open [air_quality_demo.c](wiced/air_quality_demo/air_quality_demo.c) in your ```air_quality_demo``` directory, and comment out the ```#define ENABLE_DATA_UPLOAD```
 1. Double click the make target you created earlier
 1. Open the serial console, and you should see the following output:
 ```
@@ -118,7 +118,7 @@ measured values:
 If you see this output, the setup worked as expected. You can then enable the networking (see next step). Please note that the measured values - the numbers shown above - are a representation of the live environment, so they will most likely be different in your setup.
 
 ### Step 4: Test with Network upload
-1. To test with the networking enabled, open ```air_quality_demo.c``` in your ```air_quality_demo``` directory, and remove the comment from ```#define ENABLE_DATA_UPLOAD```
+1. To test with the networking enabled, open [air_quality_demo.c](wiced/air_quality_demo/air_quality_demo.c) in your ```air_quality_demo``` directory, and remove the comment from ```#define ENABLE_DATA_UPLOAD```
 1. Double click on the make target you created earlier
 1. Check the serial configuration for information about the networking. If there's any errors here, make sure the correct Wi-Fi information is set in ```air_quality_demo_secrets.h```
 1. Then, go to https://demo.thingsboard.io/devices, click on the device you created before, and click the "LATEST TELEMETRY" 
@@ -130,7 +130,7 @@ If you see this output, the setup worked as expected. You can then enable the ne
 
 This demo should be compatible with most WICED hardware platforms, however the code may have to be adjusted to match the hardware configuration. 
 
-To do that, open the file ```air_quality_demo.c```, and locate the call to the ```ess_init()``` function. This function takes an argument of type ```ess_device_config_t```, which is a struct defined in the ```sensirion_ess``` library. More information on that library can be found [here](https://github.com/winkj/wiced-ess).
+To do that, open the file [air_quality_demo.c](wiced/air_quality_demo/air_quality_demo.c), and locate the call to the ```ess_init()``` function. This function takes an argument of type ```ess_device_config_t```, which is a struct defined in the ```sensirion_ess``` library. More information on that library can be found [here](https://github.com/winkj/wiced-ess).
 
 To build your own configuration, add the following code:
 ```c
