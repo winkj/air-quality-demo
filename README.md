@@ -65,6 +65,10 @@ Finally, to assemble the cable, procede as follows:
 - Connect the five pre-crimped wires to the connector; ensure the cables are properly aligned
 - Connect Wire 4 ```SEL``` and 5 ```GND``` together
 
+It is recommended to have at least 20cm or 8" of cable, which will allow for enough freedom to move the SPS30 around, so make sure you cut the jumper wires accordingly. 
+
+**Note:** It is also possible to use [2" pre-crimped wires](https://www.digikey.com/product-detail/en/jst-sales-america-inc/ASZHSZH28K51/455-3078-ND/6009454), with longer jumper wires.
+
 ![Wire 4 and 5 connected](doc/sps30-cable_2.jpg)
 
 - Cut off a short piece of the jumper wires with the connector you need, strip a few mm of the other end of the cable
