@@ -59,7 +59,7 @@ To make the cable, it's easier to buy pre-crimped cables.
 - 5x [Pre-crimped 6" wires](https://www.digikey.com/product-detail/en/jst-sales-america-inc/ASZHSZH28K152/455-3079-ND/6009455)
 
 In addition, to connect to the reference design, you can use any jumper cables you have available. Choose either a male of female connector based on your reference design. To connect to the ESS, female connectors are required. If you don't have cables available, the following is an example of cables that would work:
-- (Jumper wires)[https://www.amazon.com/SIM-NAT-Breadboard-Arduino-Raspberry/dp/B06XRV92ZB/]
+- [Jumper wires](https://www.amazon.com/SIM-NAT-Breadboard-Arduino-Raspberry/dp/B06XRV92ZB/)
 
 Finally, to assemble the cable, procede as follows:
 - Connect the five pre-crimped wires to the connector; ensure the cables are properly aligned
