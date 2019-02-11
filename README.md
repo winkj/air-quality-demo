@@ -110,7 +110,7 @@ This demo is using http://thingsboard.io for visualization. To setup this demo, 
 
 ### Import Dashboard
 1. Go to the ```Dashboards``` tab
-1. import the dashboard from the downloadded ZIP, located in [dashboard/air_quality_demo.json](dashboard/air_quality_demo.json)
+1. import the dashboard from the downloaded ZIP, located in [dashboard/air_quality_demo.json](dashboard/air_quality_demo.json) by pressing the red "+" button (bottom right), then the red "up arrow" button 
 
 ![Device setup](doc/tb_dashboard.jpg)
 
