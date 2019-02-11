@@ -114,6 +114,7 @@ This demo is using http://thingsboard.io for visualization. To setup this demo, 
 
 ![Device setup](doc/tb_dashboard.jpg)
 
+### Create data alias for connected device
 1. Open the newly created dashboard (It's going to be called "Air Quality Demo"
 1. Press the edit button (red pen, bottom right)
 1. Select the entity aliases button, and make sure you have an alias named ```ess-input```, Filter Type ```Single Device```, Type ```Device```, Device ```WICED_INPUT```
