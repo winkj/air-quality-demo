@@ -198,20 +198,20 @@ The resulting dashboard should look like this:
 
 This demo should be compatible with most WICED hardware platforms, however the code may have to be adjusted to match the hardware configuration. 
 
-To do that, open the file [air_quality_demo.c](wiced/air_quality_demo/air_quality_demo.c), and locate the call to the ```ess_init()``` function. This function takes an argument of type ```ess_device_config_t```, which is a struct defined in the ```sensirion_ess``` library. More information on that library can be found [here](https://github.com/winkj/wiced-ess).
+To do that, open the file [air_quality_demo.c](wiced/air_quality_demo/air_quality_demo.c), and locate the definition of ```device_config ```. This struct is of type ```ess_device_config_t```, which is ```sensirion_ess``` library that's included in this demo. More information on that library can be found [here](https://github.com/winkj/wiced-ess).
 
-To build your own configuration, add the following code:
+To adapt your own configuration, add the following code:
 ```c
 const ess_device_config_t device_config = {
     .i2c_port              = WICED_I2C_1,
     .needs_init_workaround = 0,
     .leds_supported        = 0,
+    .flags                 = I2C_DEVICE_NO_DMA
 };
 ```
-Simply change the ```.i2c_port``` to match the I2C port you are attaching the sensors to (e.g. ```WICED_I2C_1, WICED_I2C_2, WICED_I2C_3, WICED_I2C_4```). Once this is done, change the line with ```ess_init()``` to use this particular configuration:
-```c
-    // -- device probing
-    while (ess_init(&device_config) != WICED_SUCCESS) {
-```
+Simply change the ```.i2c_port``` to match the I2C port you are attaching the sensors to (e.g. ```WICED_I2C_1, WICED_I2C_2, WICED_I2C_3, WICED_I2C_4```). 
 
 You can find a list of premade configurations for WICED devices in the [wiced-ess library](https://github.com/winkj/wiced-ess/blob/master/sensirion_ess/ess_device_configs.c), which includes a default configuration called ```ESS_DEVICE_CONFIG_DEFAULT```.
+
+### Configuring for Cypress CY8CKIT-062-WIFI-BT
+In order to use the Arduino connector of the Cypress CY8CKIT-062-WIFI-BT - compatible with the Environmental Sensor Shield - set ```.i2c_port``` to ```WICED_I2C_4```. This will configure the library to use the correct I2C port.
