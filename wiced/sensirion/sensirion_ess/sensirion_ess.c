@@ -66,14 +66,12 @@ wiced_result_t ess_init(const ess_device_config_t* config)
         return WICED_BADOPTION;
     }
 
-    gDeviceConfig.i2c_port              = config->i2c_port;
-    gDeviceConfig.leds_supported        = config->leds_supported;
-    gDeviceConfig.needs_init_workaround = config->needs_init_workaround;
-    gDeviceConfig.pin_red               = config->pin_red;
-    gDeviceConfig.pin_yellow            = config->pin_yellow;
-    gDeviceConfig.pin_green             = config->pin_green;
+    memcpy(&gDeviceConfig, config, sizeof(ess_device_config_t));
 
-    sensirion_wiced_set_i2c_port(config->i2c_port);
+    if (sensirion_wiced_setup_i2c_port(config->i2c_port, config->flags) != WICED_SUCCESS) {
+        WPRINT_APP_INFO(("wiced i2c init failed\n"));
+        return WICED_ERROR;
+    }
 
     if (config->leds_supported) {
         wiced_gpio_init(gDeviceConfig.pin_red,    OUTPUT_PUSH_PULL);

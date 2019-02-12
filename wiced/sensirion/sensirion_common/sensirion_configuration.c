@@ -44,7 +44,7 @@ static wiced_i2c_device_t gWicedi2cDeviceTmpl = {
     .port = WICED_I2C_1, /* default */
     .address = 0x0,
     .address_width = I2C_ADDRESS_WIDTH_7BIT,
-    .speed_mode = I2C_STANDARD_SPEED_MODE
+    .speed_mode = I2C_STANDARD_SPEED_MODE,
 };
 
 /**
@@ -73,10 +73,8 @@ int8_t sensirion_i2c_read(uint8_t address, uint8_t* data, uint16_t count)
 
     /* create a copy to avoid a race condition */
     static wiced_i2c_device_t tmpDevice;
-    tmpDevice.port          = gWicedi2cDeviceTmpl.port;
-    tmpDevice.address_width = gWicedi2cDeviceTmpl.address_width;
-    tmpDevice.speed_mode    = gWicedi2cDeviceTmpl.speed_mode;
-    tmpDevice.address       = address;
+    memcpy(&tmpDevice, &gWicedi2cDeviceTmpl, sizeof(wiced_i2c_device_t));
+    tmpDevice.address = address;
 
     if((wres = wiced_i2c_init_rx_message(&msg, data, count, 1, WICED_TRUE)) != WICED_SUCCESS){
         return wres;
@@ -103,10 +101,8 @@ int8_t sensirion_i2c_write(uint8_t address, const uint8_t* data, uint16_t count)
 
     /* create a copy to avoid a race condition */
     static wiced_i2c_device_t tmpDevice;
-    tmpDevice.port          = gWicedi2cDeviceTmpl.port;
-    tmpDevice.address_width = gWicedi2cDeviceTmpl.address_width;
-    tmpDevice.speed_mode    = gWicedi2cDeviceTmpl.speed_mode;
-    tmpDevice.address       = address;
+    memcpy(&tmpDevice, &gWicedi2cDeviceTmpl, sizeof(wiced_i2c_device_t));
+    tmpDevice.address = address;
 
     if((wres = wiced_i2c_init_tx_message(&msg, data, count, 1, WICED_TRUE)) != WICED_SUCCESS){
         return wres;
@@ -130,9 +126,14 @@ void sensirion_sleep_usec(uint32_t useconds) {
  * Wiced specific: select a different I2C port
  *
  *
- * @param useconds the sleep time in microseconds
+ * @param port the WICED i2c port to use
+ * @param flags flags for the I2C device
  */
-void sensirion_wiced_set_i2c_port(wiced_i2c_t port)
+wiced_result_t sensirion_wiced_setup_i2c_port(wiced_i2c_t port, uint8_t flags)
 {
     gWicedi2cDeviceTmpl.port = port;
+    gWicedi2cDeviceTmpl.flags = flags;
+
+    return wiced_i2c_init(&gWicedi2cDeviceTmpl);
 }
+

@@ -34,7 +34,8 @@
 const ess_device_config_t ESS_DEVICE_CONFIG_DEFAULT = {
     .i2c_port              = WICED_I2C_1,
     .needs_init_workaround = 0,
-    .leds_supported        = 0
+    .leds_supported        = 0,
+    .flags                 = 0
 };
 
 const ess_device_config_t ESS_DEVICE_CONFIG_NEBULA = {
@@ -43,7 +44,8 @@ const ess_device_config_t ESS_DEVICE_CONFIG_NEBULA = {
         .leds_supported        = 1,
         .pin_red               = WICED_GPIO_32,
         .pin_yellow            = WICED_GPIO_18,
-        .pin_green             = WICED_GPIO_24
+        .pin_green             = WICED_GPIO_24,
+        .flags                 = 0
 };
 
 const ess_device_config_t ESS_DEVICE_CONFIG_QUICKSILVER = {
@@ -52,5 +54,6 @@ const ess_device_config_t ESS_DEVICE_CONFIG_QUICKSILVER = {
         .leds_supported        = 1,
         .pin_red               = WICED_GPIO_36,
         .pin_yellow            = WICED_GPIO_22,
-        .pin_green             = WICED_GPIO_21
+        .pin_green             = WICED_GPIO_21,
+        .flags                 = 0
 };

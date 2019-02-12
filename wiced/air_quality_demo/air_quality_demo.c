@@ -41,14 +41,13 @@
 #include "http_client.h"
 
 #include "sensirion_ess.h"
-#include "ess_device_configs.h"
 #include "sps30.h"
+#include "sensirion_common_wiced.h"
 
 #define DELAY_TIME 500
 
 // Use this define to enable data upload
 #define ENABLE_DATA_UPLOAD
-
 
 #include "http_send_message.h"
 
@@ -57,7 +56,6 @@ void application_start( )
     // ESS
     u16 tvoc_ppb, co2_eq_ppm;
     s32 temperature, humidity;
-    float iaq_index = 0;
 
     // SPS30
     struct sps30_measurement m;
@@ -72,29 +70,29 @@ void application_start( )
 
     wiced_init();
 
-    WPRINT_APP_INFO(("EW demo\n"));
+    WPRINT_APP_INFO(("Air Quality Demo\n"));
 
 #ifdef ENABLE_DATA_UPLOAD
     networkUp = init_http();
 #endif /* ENABLE_DATA_UPLOAD */
 
-    /*
-    const ess_device_config_t config_cy8ckit = {
-            .i2c_port              = WICED_I2C_4,
-            .needs_init_workaround = 1,
+    // adapt the following lines to your hardware configuration
+    const ess_device_config_t device_config = {
+            .i2c_port              = WICED_I2C_1,
+            .needs_init_workaround = 0,
             .leds_supported        = 0,
-    };*/
-
+            .flags                 = I2C_DEVICE_NO_DMA
+    };
 
     // -- device probing
-    while (ess_init(&ESS_DEVICE_CONFIG_NEBULA) != WICED_SUCCESS) {
+    while (ess_init(&device_config) != WICED_SUCCESS) {
         WPRINT_APP_INFO(("ESS probing failed\n"));
         wiced_rtos_delay_milliseconds(DELAY_TIME);
     }
 
     while (sps30_probe() != 0) {
         WPRINT_APP_INFO(("SPS sensor probing failed\n"));
-        wiced_rtos_delay_milliseconds(1000);
+        wiced_rtos_delay_milliseconds(DELAY_TIME);
     }
     WPRINT_APP_INFO(("SPS sensor probing successful\n"));
 
@@ -107,7 +105,7 @@ void application_start( )
     if (ret < 0)
         WPRINT_APP_INFO(("error starting measurement\n"));
     WPRINT_APP_INFO(("measurements started\n"));
-    wiced_rtos_delay_milliseconds(1000);
+    wiced_rtos_delay_milliseconds(DELAY_TIME);
 
     // -- main loop
         // -- read SGP30, connected to the ESS (environmental sensor shield)
@@ -176,7 +174,7 @@ void application_start( )
         //
         // For the sake of simplicity, the author opted for a simple 1s delay here instead,
         // potentially sacrificing a little bit of accuracy
-        wiced_rtos_delay_milliseconds(1000);
+        wiced_rtos_delay_milliseconds(DELAY_TIME);
     }
 
 }

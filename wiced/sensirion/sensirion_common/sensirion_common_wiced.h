@@ -31,6 +31,8 @@
 #ifndef SENSIRION_COMMON_WICED_H
 #define SENSIRION_COMMON_WICED_H
 
+#include "wiced.h"
+
 #include "sensirion_configuration.h"
 
 #ifdef __cplusplus
@@ -42,7 +44,7 @@ extern "C" {
  * this is implemented in sensirion_configuration.c, to allow
  * using a port other than WICED_I2C_1
  */
-void sensirion_wiced_set_i2c_port(wiced_i2c_t port);
+wiced_result_t sensirion_wiced_setup_i2c_port(wiced_i2c_t port, uint8_t flags);
 
 #ifdef __cplusplus
 }

@@ -53,6 +53,7 @@ typedef struct {
     wiced_gpio_t pin_red;
     wiced_gpio_t pin_green;
     wiced_gpio_t pin_yellow;
+    uint8_t flags;
 } ess_device_config_t;
 
 
