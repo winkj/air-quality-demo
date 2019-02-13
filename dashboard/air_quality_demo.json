@@ -503,7 +503,7 @@
                 {
                   "name": "pm2_5",
                   "type": "timeseries",
-                  "label": "PM 4.0 [μg/m3]",
+                  "label": "PM 2.5 [μg/m3]",
                   "color": "#1de9b6",
                   "settings": {
                     "showLines": false,
@@ -1004,7 +1004,7 @@
                   "name": "tvoc",
                   "type": "timeseries",
                   "label": "Total VOC [ppb]",
-                  "color": "#4527a0",
+                  "color": "#2e7d32",
                   "settings": {
                     "showLines": true,
                     "fillLines": false,
@@ -1018,7 +1018,7 @@
                   "name": "co2eq",
                   "type": "timeseries",
                   "label": "CO2 equivalent [ppm]",
-                  "color": "#4caf50",
+                  "color": "#4527a0",
                   "settings": {
                     "showLines": true,
                     "fillLines": false,
